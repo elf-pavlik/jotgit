@@ -7,10 +7,7 @@
   },
   "bower": {
     "codemirror": {
-      "version": "4.1.0",
-      "additionalFiles": [
-        "mode/markdown/markdown.js"
-      ]
+      "version": "4.1.0"
     }
   }
 }
