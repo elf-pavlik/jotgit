@@ -16,3 +16,13 @@ img#logo {
   padding-top: 20px;
   width: 100px;
 }
+
+.CodeMirror {
+  width: 50%;
+  float: left;
+}
+
+#preview {
+  margin-left: 50%;
+  width: 50%;
+}

@@ -8,6 +8,9 @@
 
 @FileSelections = new Meteor.Collection('fileSelections')
 
+updatePreview  = ->
+    $('#preview').html window.marked(Jotgit.cm.getValue())
+
 Template.files.files = -> Files.find()
 
 Template.fileEdit.fileInfo = -> FileInfo.findOne()
@@ -66,6 +69,9 @@ Deps.autorun ->
     finally
       Jotgit.cmAdapter.ignoreNextChange = false
     Jotgit.cm.focus()
+    # preview
+    updatePreview()
+    Jotgit.cm.on('change', updatePreview);
     # TODO are we going to handle clients ourselves?
     clients = []
     serverAdapter = new MeteorServerAdapter(fileInfo._id)
